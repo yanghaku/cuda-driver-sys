@@ -20,7 +20,7 @@ cuda-driver-sys = { version = "0.3.1", git = "https://github.com/yanghaku/cuda-d
 [dependencies]
 cuda-driver-sys-102 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-102", optional = true }
 cuda-driver-sys-115 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-115", optional = true }
-cuda-driver-sys-115 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-117", optional = true }
+cuda-driver-sys-117 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-117", optional = true }
 
 [features]
 default-cuda-version = ["cuda-102"]
