@@ -112,7 +112,7 @@ fn bindgen_test_layout_double2() {
 pub type cuFloatComplex = float2;
 pub type cuDoubleComplex = double2;
 pub type cuComplex = cuFloatComplex;
-pub type size_t = ::std::os::raw::c_ulong;
+pub type size_t = usize;
 pub type cuuint32_t = u32;
 pub type cuuint64_t = u64;
 pub type CUdeviceptr_v2 = ::std::os::raw::c_ulonglong;
