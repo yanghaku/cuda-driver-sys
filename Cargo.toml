@@ -12,4 +12,4 @@ categories = ["external-ffi-bindings"]
 
 build = "build.rs"
 
-links = "cuda-117"
+links = "cuda-118"
