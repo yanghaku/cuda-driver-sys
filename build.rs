@@ -38,7 +38,7 @@ pub fn find_cuda() -> Vec<PathBuf> {
     if cfg!(not(target_os = "windows")) {
         candidates.push(PathBuf::from("/opt/cuda"));
         candidates.push(PathBuf::from("/usr/local/cuda"));
-        candidates.push(PathBuf::from("/usr/local/cuda-10.2"));
+        candidates.push(PathBuf::from("/usr/local/cuda-11.7"));
     }
 
     for base in &candidates {
