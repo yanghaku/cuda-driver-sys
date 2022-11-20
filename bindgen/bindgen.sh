@@ -4,7 +4,7 @@ set -ex
 
 if [ "${CUDA_HOME}" == "" ]; then
 	# default cuda home
-	CUDA_HOME="/usr/local/cuda"
+	CUDA_HOME="/usr/local/cuda-11.7"
 fi
 
 DIRNAME=$(dirname "$0")
