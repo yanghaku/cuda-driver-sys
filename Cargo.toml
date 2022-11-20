@@ -1,6 +1,6 @@
 [package]
 name = "cuda-driver-sys"
-version = "0.3.1"
+version = "0.3.2"
 edition = "2021"
 authors = ["Toshiki Teramura <toshiki.teramura@gmail.com>", "YangBo <bo.yang@smail.nju.edu.cn>"]
 description = "Rust binding to CUDA Driver APIs"
@@ -13,3 +13,7 @@ categories = ["external-ffi-bindings"]
 build = "build.rs"
 
 links = "cuda-102"
+
+[features]
+cuda-static-link = []
+cublas = []
