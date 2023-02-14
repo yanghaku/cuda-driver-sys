@@ -1,6 +1,6 @@
 use std::{env, path::PathBuf};
 
-static CUDA_VERSION: &'static str = "cuda-11.8";
+static CUDA_VERSION: &'static str = "cuda-12.0";
 
 macro_rules! cuda_panic {
     () => {
