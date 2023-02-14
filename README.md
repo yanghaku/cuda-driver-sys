@@ -21,12 +21,16 @@ cuda-driver-sys = { version = "0.3.1", git = "https://github.com/yanghaku/cuda-d
 cuda-driver-sys-102 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-102", optional = true }
 cuda-driver-sys-115 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-115", optional = true }
 cuda-driver-sys-117 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-117", optional = true }
+cuda-driver-sys-118 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-118", optional = true }
+cuda-driver-sys-120 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-120", optional = true }
 
 [features]
-default-cuda-version = ["cuda-102"]
+default-cuda-version = ["cuda-120"]
 cuda-102 = ["cuda-driver-sys-102"]
 cuda-115 = ["cuda-driver-sys-115"]
 cuda-117 = ["cuda-driver-sys-117"]
+cuda-118 = ["cuda-driver-sys-118"]
+cuda-120 = ["cuda-driver-sys-120"]
 ```
 
 ### Why start this project
@@ -38,7 +42,6 @@ cuda-117 = ["cuda-driver-sys-117"]
 ### version info
 
 * branch cuda-102: copy src/*.rs from [```cuda-sys/cuda-driver-sys```], and rewrite build.rs
-* branch cuda-115: use ```bindgen``` to generate
-* branch cuda-116: use ```bindgen``` to generate
+* branch cuda-115+: use ```bindgen``` to generate
 
 [```cuda-sys```]: https://github.com/rust-cuda/cuda-sys
