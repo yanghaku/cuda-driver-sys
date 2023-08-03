@@ -34,9 +34,4 @@ cuda-120 = ["cuda-driver-sys-120"]
    driver 10.2.
 2. We can switch cuda version dependence with cargo feature rather than change source code everytime.
 
-### version info
-
-* branch cuda-102: copy src/*.rs from [```cuda-sys/cuda-driver-sys```], and rewrite build.rs
-* branch cuda-115+: use ```bindgen``` to generate
-
 [```cuda-sys```]: https://github.com/rust-cuda/cuda-sys
