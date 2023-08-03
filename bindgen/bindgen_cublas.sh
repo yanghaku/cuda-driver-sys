@@ -10,8 +10,8 @@ fi
 DIRNAME=$(dirname "$0")
 
 bindgen \
-  --whitelist-type="^cublas.*" \
-  --whitelist-function="^cublas.*" \
+  --allowlist-type="^cublas.*" \
+  --allowlist-function="^cublas.*" \
   --default-enum-style=rust \
   --no-doc-comments \
   --with-derive-default \
