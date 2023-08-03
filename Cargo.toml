@@ -1,15 +1,19 @@
 [package]
 name = "cuda-driver-sys"
-version = "0.3.1"
+version = "0.3.2"
 edition = "2021"
-authors = ["Toshiki Teramura <toshiki.teramura@gmail.com>", "YangBo <bo.yang@smail.nju.edu.cn>"]
+authors = ["YangBo <bo.yang@smail.nju.edu.cn>"]
 description = "Rust binding to CUDA Driver APIs"
 repository = "https://github.com/yanghaku/cuda-driver-sys"
 keywords = ["GPGPU", "CUDA", "ffi"]
-license = "MIT/Apache-2.0"
+license = "Apache-2.0"
 readme = "./README.md"
 categories = ["external-ffi-bindings"]
 
 build = "build.rs"
 
 links = "cuda-115"
+
+[features]
+cuda-static-link = []
+cublas = []
