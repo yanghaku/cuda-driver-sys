@@ -1,6 +1,6 @@
 use std::{env, path::PathBuf};
 
-static CUDA_VERSION: &'static str = "cuda-12.1";
+static CUDA_VERSION: &'static str = "cuda-12.2";
 
 macro_rules! cuda_panic {
     () => {
@@ -23,13 +23,13 @@ fn find_cuda_lib(lib_name: &'static str) -> Vec<PathBuf> {
             "stubs",
             "lib64/stubs",
             #[cfg(target_arch = "x86_64")]
-                "targets/x86_64-linux",
+            "targets/x86_64-linux",
             #[cfg(target_arch = "x86_64")]
-                "targets/x86_64-linux/lib",
+            "targets/x86_64-linux/lib",
             #[cfg(target_arch = "aarch64")]
-                "targets/aarch64-linux",
+            "targets/aarch64-linux",
             #[cfg(target_arch = "aarch64")]
-                "targets/aarch64-linux/lib",
+            "targets/aarch64-linux/lib",
         ];
     }
 
@@ -72,13 +72,19 @@ fn find_cublas() -> Vec<PathBuf> {
     let lib_name;
 
     #[cfg(target_os = "windows")]
-    { lib_name = "cublas.lib"; }
+    {
+        lib_name = "cublas.lib";
+    }
     #[cfg(not(target_os = "windows"))]
     {
         #[cfg(feature = "cuda-static-link")]
-        { lib_name = "libcublas_static.a"; }
+        {
+            lib_name = "libcublas_static.a";
+        }
         #[cfg(not(feature = "cuda-static-link"))]
-        { lib_name = "libcublas.so"; }
+        {
+            lib_name = "libcublas.so";
+        }
     }
 
     let p = find_cuda_lib(lib_name);
@@ -90,9 +96,9 @@ fn find_cublas() -> Vec<PathBuf> {
 
 fn find_cuda() -> Vec<PathBuf> {
     #[cfg(target_os = "windows")]
-        let lib_name = "cuda.lib";
+    let lib_name = "cuda.lib";
     #[cfg(not(target_os = "windows"))]
-        let lib_name = "libcuda.so";
+    let lib_name = "libcuda.so";
 
     let mut valid_paths = find_cuda_lib(lib_name);
     if valid_paths.is_empty() {
@@ -137,7 +143,9 @@ fn main() {
             println!("cargo:rustc-link-search=native={}", path.display());
         }
         if cfg!(not(target_os = "windows")) && cfg!(feature = "cuda-static-link") {
-            println!("cargo:rustc-flags=-lcudart_static -lcublas_static -lcublasLt_static -lstdc++");
+            println!(
+                "cargo:rustc-flags=-lcudart_static -lcublas_static -lcublasLt_static -lstdc++"
+            );
         } else {
             println!("cargo:rustc-flags=-lcudart -lcublas -lcublasLt");
         }

@@ -7494,6 +7494,11 @@ extern "C" {
 extern "C" {
     pub fn cublasLtHeuristicsCacheSetCapacity(capacity: usize) -> cublasStatus_t;
 }
+extern "C" {
+    pub fn cublasLtDisableCpuInstructionsSetMask(
+        mask: ::std::os::raw::c_uint,
+    ) -> ::std::os::raw::c_uint;
+}
 #[repr(C)]
 #[derive(Debug, Default, Copy, Clone, Hash, PartialOrd, Ord, PartialEq, Eq)]
 pub struct cublasLtMatrixLayoutOpaque_t {
@@ -7695,7 +7700,9 @@ pub enum cublasLtMatmulTile_t {
     CUBLASLT_MATMUL_TILE_192x128 = 31,
     CUBLASLT_MATMUL_TILE_128x192 = 32,
     CUBLASLT_MATMUL_TILE_128x96 = 33,
-    CUBLASLT_MATMUL_TILE_END = 34,
+    CUBLASLT_MATMUL_TILE_32x256 = 34,
+    CUBLASLT_MATMUL_TILE_256x32 = 35,
+    CUBLASLT_MATMUL_TILE_END = 36,
 }
 #[repr(u32)]
 #[derive(Debug, Copy, Clone, Hash, PartialOrd, Ord, PartialEq, Eq)]

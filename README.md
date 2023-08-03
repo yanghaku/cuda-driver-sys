@@ -6,31 +6,27 @@ This project focuses only ```cuda driver api```, the full cuda-sys can see [```c
 
 ### Usage
 
-1. just one version
-   such as cuda version 10.2
+1. Just one version.
+   such as cuda version 12.2
 
 ```toml
 [dependencies]
-cuda-driver-sys = { version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-102" }
+cuda-driver-sys = { version = "0.3", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-122" }
 ```
 
-2. multi versions with cargo feature
+2. More than one version with cargo features.
 
 ```toml
 [dependencies]
-cuda-driver-sys-102 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-102", optional = true }
-cuda-driver-sys-115 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-115", optional = true }
-cuda-driver-sys-117 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-117", optional = true }
-cuda-driver-sys-118 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-118", optional = true }
-cuda-driver-sys-120 = { package = "cuda-driver-sys", version = "0.3.1", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-120", optional = true }
+cuda-driver-sys-102 = { package = "cuda-driver-sys", version = "0.3", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-102", optional = true }
+cuda-driver-sys-118 = { package = "cuda-driver-sys", version = "0.3", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-118", optional = true }
+cuda-driver-sys-122 = { package = "cuda-driver-sys", version = "0.3", git = "https://github.com/yanghaku/cuda-driver-sys", branch = "cuda-122", optional = true }
 
 [features]
-default-cuda-version = ["cuda-120"]
+default-cuda-version = ["cuda-122"]
 cuda-102 = ["cuda-driver-sys-102"]
-cuda-115 = ["cuda-driver-sys-115"]
-cuda-117 = ["cuda-driver-sys-117"]
 cuda-118 = ["cuda-driver-sys-118"]
-cuda-120 = ["cuda-driver-sys-120"]
+cuda-122 = ["cuda-driver-sys-122"]
 ```
 
 ### Why start this project
