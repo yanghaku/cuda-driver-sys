@@ -6,7 +6,7 @@ This project focuses only ```cuda driver api```, the full cuda-sys can see [```c
 
 ### Usage
 
-1. Just one version. such as cuda version 10.2
+1. Just one version, such as cuda version 10.2.
 
 ```toml
 [dependencies]
@@ -33,10 +33,5 @@ cuda-121 = ["cuda-driver-sys-121"]
 1. My rust project need cuda driver library and need the newest feature for cuda, but the [```cuda-sys```] only has cuda
    driver 10.2.
 2. We can switch cuda version dependence with cargo feature rather than change source code everytime.
-
-### version info
-
-* branch cuda-102: copy src/*.rs from [```cuda-sys/cuda-driver-sys```], and rewrite build.rs
-* branch cuda-115+: use ```bindgen``` to generate
 
 [```cuda-sys```]: https://github.com/rust-cuda/cuda-sys

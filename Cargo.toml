@@ -6,7 +6,7 @@ authors = ["YangBo <bo.yang@smail.nju.edu.cn>"]
 description = "Rust binding to CUDA Driver APIs"
 repository = "https://github.com/yanghaku/cuda-driver-sys"
 keywords = ["GPGPU", "CUDA", "ffi"]
-license = "MIT/Apache-2.0"
+license = "Apache-2.0"
 readme = "./README.md"
 categories = ["external-ffi-bindings"]
 
